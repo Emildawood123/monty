@@ -7,7 +7,7 @@
 void push(stack_t **stack, unsigned int line)
 {
 stack_t *new;
-int n;
+int num;
 new = malloc(sizeof(stack_t));
 if (is_d(value) < 0)
 {
@@ -16,7 +16,7 @@ free_stack(stack);
 fprintf(stderr, "L%d: usage: push integer", line);
 exit(EXIT_FAILURE);
 }
-n = atoi(value);
+num = atoi(value);
 if (new == NULL)
 {
 free_stack(&new);
@@ -24,14 +24,14 @@ free_stack(stack);
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
-new->n = n;
+new->n = num;
 new->prev = NULL;
 if (*stack != NULL)
 {
 new->next = *stack;
 (*stack)->prev = new;
 }
-else
+else if (*stack == NULL)
 {
 new->next = NULL;
 }
