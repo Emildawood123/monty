@@ -55,5 +55,14 @@ exit(EXIT_FAILURE);
 }
 (*stack)->n = (*stack)->n + (*stack)->next->n;
 (*stack)->next = (*stack)->next->next;
+}
+/**
+ * nop - do nonthing
+ * @stack: UNUSED
+ * @line_number:UNUSED
+*/
+void nop(stack_t **stack __attribute__((unused)),
+unsigned int line_number __attribute__((unused)))
+{
 
 }
