@@ -9,7 +9,8 @@
  */
 int main(int argc, char *argv[])
 {
-instruction_t opcode[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}};
+instruction_t opcode[] = {{"push", push}, {"pall", pall}, {"pint", pint},
+{"pop", pop}};
 stack_t *new_s;
 char *new, *instruc, *line = NULL;
 FILE *stream;
