@@ -11,6 +11,7 @@ int num;
 new = malloc(sizeof(stack_t));
 if (new == NULL)
 {
+free(new);
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
@@ -50,6 +51,7 @@ while (curr)
 fprintf(stdout, "%d\n", curr->n);
 curr = curr->next;
 }
+free(curr);
 }
 /**
  * is_d - taht check is digit or no
@@ -59,6 +61,10 @@ curr = curr->next;
 int is_d(char *value)
 {
 int c = 0;
+if (value == NULL)
+{
+return (-1);
+}
 if (value[c] == '-')
 {
 c++;

@@ -7,6 +7,7 @@
 #include <string.h>
 #define TOKEN " \t\r\n\a\""
 extern char *value;
+char *value;
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
