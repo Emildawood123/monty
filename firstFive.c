@@ -2,12 +2,19 @@
 /**
  * push - that push new element to stack
  * @stack: stack
- * @n: number
+ * @line: number
  */
-void push(stack_t **stack, unsigned int n)
+void push(stack_t **stack, unsigned int line)
 {
 stack_t *new;
+int n;
 new = malloc(sizeof(stack_t));
+if (is_d(value) < 0)
+{
+fprintf(stderr, "L%d: usage: push integer", line);
+exit(EXIT_FAILURE);
+}
+n = atoi(value);
 if (new == NULL)
 {
 fprintf(stderr, "Error: malloc failed\n");
@@ -29,10 +36,10 @@ new->next = NULL;
 /**
  * pall - that print all ele
  * @stack: head of stack
- * @n: number line
+ * @line: number line
  * Return: void
  */
-void pall(stack_t **stack, unsigned int n __attribute__((unused)))
+void pall(stack_t **stack, unsigned int line __attribute__((unused)))
 {
 stack_t *curr;
 curr = *stack;
@@ -67,14 +74,14 @@ return (1);
 /**
  * pint - that fun print last
  * @stack: head of
- * @n: number
+ * @line: number
  * Return: void
  */
-void pint(stack_t **stack, __attribute__((unused)) unsigned int n)
+void pint(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
 if (*stack == NULL || stack == NULL)
 {
-fprintf(stdout, "L%d: can't pint, stack empty", n);
+fprintf(stdout, "L%d: can't pint, stack empty", line);
 exit(EXIT_FAILURE);
 }
 fprintf(stdout, "%d\n", (*stack)->n);
