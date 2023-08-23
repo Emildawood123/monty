@@ -45,4 +45,5 @@ void er_ins(int count, char *new_line, char *line);
 void er_argc(void);
 void pint(stack_t **stack, __attribute__((unused)) unsigned int n);
 int is_d(char *value);
+void pop(stack_t **stack, unsigned int line);
 #endif

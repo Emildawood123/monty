@@ -9,7 +9,7 @@
  */
 int main(int argc, char *argv[])
 {
-instruction_t opcode[] = {{"push", push}, {"pall", pall}, {"pint", pint}};
+instruction_t opcode[] = {{"push", push}, {"pall", pall}, {"pint", pint}, {"pop", pop}};
 stack_t *new_s;
 char *new, *instruc, *line = NULL;
 FILE *stream;
@@ -86,7 +86,7 @@ return (line);
 int is_valid(char *line, instruction_t opcode[])
 {
 int i;
-for (i = 0; i <= 2; i++)
+for (i = 0; i <= 3; i++)
 {
 if (strcmp(line, opcode[i].opcode) == 0)
 return (i);
