@@ -47,7 +47,7 @@ num = (*stack)->n;
  */
 void add(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
-if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
+if (*stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
 fprintf(stderr, "L%d: can't add, stack too short\n", line);
@@ -57,12 +57,12 @@ exit(EXIT_FAILURE);
 (*stack)->next = (*stack)->next->next;
 }
 /**
- * nop - do nonthing
- * @stack: UNUSED
- * @line_number:UNUSED
-*/
-void nop(stack_t **stack __attribute__((unused)),
-unsigned int line_number __attribute__((unused)))
+ * nop - nothing
+ * @stack: head of stack
+ * @line: l
+ */
+void nop(__attribute__((unused)) stack_t **stack, 
+__attribute__((unused)) unsigned int line)
 {
 
 }
