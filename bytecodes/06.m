@@ -6,3 +6,5 @@ push 3
 pint
 swap
 pall
+add
+pall

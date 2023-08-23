@@ -10,7 +10,7 @@
 int main(int argc, char *argv[])
 {
 instruction_t opcode[] = {{"push", push}, {"pall", pall}, {"pint", pint},
-{"pop", pop}, {"swap", swap}};
+{"pop", pop}, {"swap", swap}, {"add", add}};
 stack_t *new_s;
 char *new, *instruc, *line = NULL;
 FILE *stream;
@@ -87,7 +87,7 @@ return (line);
 int is_valid(char *line, instruction_t opcode[])
 {
 int i;
-for (i = 0; i <= 4; i++)
+for (i = 0; i <= 5; i++)
 {
 if (strcmp(line, opcode[i].opcode) == 0)
 return (i);
