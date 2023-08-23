@@ -101,12 +101,13 @@ return (-1);
  */
 void free_stack(stack_t **stack)
 {
-stack_t *freeme;
-freeme = *stack;
-while (freeme)
+stack_t *trav = *stack;
+stack_t *free_me;
+while (trav != NULL)
 {
-free(freeme);
-freeme = freeme->next;
+free_me = trav;
+trav = trav->next;
+free(free_me);
 }
 *stack = NULL;
 }
