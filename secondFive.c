@@ -30,7 +30,7 @@ else
 void swap(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
 int num;
-if (*stack == NULL || (*stack)->next == NULL)
+if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
 fprintf(stderr, "L%d: can't swap, stack too short\n", line);
@@ -56,7 +56,7 @@ if (new == NULL)
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
-if (*stack == NULL || (*stack)->next == NULL)
+if (stack == NULL || *stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
 fprintf(stderr, "L%d: can't add, stack too short\n", line);
