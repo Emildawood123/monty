@@ -38,7 +38,7 @@ stack_t *new;
 if (*stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
-fprintf(stderr, "L%d: can't div, stack too short\n", line);
+fprintf(stderr, "L%d: can't mul, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 new = *stack;
