@@ -4,7 +4,7 @@
  * @stack: stack
  * @line: line number
  */
-void mydiv(stack_t **stack, __attribute__((unused)) unsigned int line)
+void mydiv(stack_t **stack, unsigned int line)
 {
 int num;
 stack_t *new;
