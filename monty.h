@@ -52,4 +52,5 @@ void nop(stack_t **stack, unsigned int line);
 void sub(stack_t **stack, unsigned int line);
 void mydiv(stack_t **stack, unsigned int line);
 void mymul(stack_t **stack, unsigned int line);
+void mymod(stack_t **stack, unsigned int line);
 #endif
