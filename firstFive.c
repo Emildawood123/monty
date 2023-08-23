@@ -11,6 +11,8 @@ int n;
 new = malloc(sizeof(stack_t));
 if (is_d(value) < 0)
 {
+free_stack(&new);
+free_stack(stack);
 fprintf(stderr, "L%d: usage: push integer", line);
 exit(EXIT_FAILURE);
 }
