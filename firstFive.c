@@ -13,7 +13,7 @@ if (is_d(value) < 0)
 {
 free_stack(&new);
 free_stack(stack);
-fprintf(stderr, "L%d: usage: push integer", line);
+fprintf(stderr, "L%d: usage: push integer\n", line);
 exit(EXIT_FAILURE);
 }
 num = atoi(value);
