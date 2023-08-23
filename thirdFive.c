@@ -17,6 +17,6 @@ if ((*stack)->n == 0)
 fprintf(stderr, "L%d: division by zero\n", line);
 exit(EXIT_FAILURE);
 }
-(*stack)->n->next = (*stack)->n->next / (*stack)->->n;
+(*stack)->next->n = (*stack)->next->n / (*stack)->n;
 (*stack)->next = (*stack)->next->next;
 }
