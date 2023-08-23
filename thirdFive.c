@@ -6,6 +6,8 @@
  */
 void mydiv(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
+int num;
+stack_t *new;
 if (*stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
@@ -17,6 +19,10 @@ if ((*stack)->n == 0)
 fprintf(stderr, "L%d: division by zero\n", line);
 exit(EXIT_FAILURE);
 }
-(*stack)->n = (*stack)->n / (*stack)->next->n;
-(*stack)->next = (*stack)->next->next;
+new = *stack;
+num = (*stack)->n;
+(*stack)->next->n /= num;
+(*stack)->next->prev = NULL;
+free(new);
+*stack = (*stack)->next;
 }
