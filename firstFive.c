@@ -9,7 +9,7 @@ void push(stack_t **stack, unsigned int line)
 stack_t *new;
 int num;
 new = malloc(sizeof(stack_t));
-if (is_d(value) < 0)
+if (is_d(value) == -1)
 {
 free_stack(&new);
 free_stack(stack);
@@ -59,7 +59,7 @@ curr = curr->next;
 int is_d(char *value)
 {
 int c = 0;
-if (value[0] == '-')
+if (value[c] == '-')
 {
 c++;
 }
