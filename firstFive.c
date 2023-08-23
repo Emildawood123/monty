@@ -19,7 +19,6 @@ exit(EXIT_FAILURE);
 num = atoi(value);
 if (new == NULL)
 {
-free_stack(&new);
 fprintf(stderr, "Error: malloc failed\n");
 exit(EXIT_FAILURE);
 }
