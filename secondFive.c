@@ -66,6 +66,7 @@ new->prev = NULL;
 num1 = (*stack)->n;
 num2 = (*stack)->next->n;
 new->n = num1 + num2;
+free((*stack)->next);
 new->next = (*stack)->next->next;
 (*stack) = new;
 }
