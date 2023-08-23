@@ -47,7 +47,7 @@ stack_t *curr;
 curr = *stack;
 while (curr)
 {
-fprintf(stdout, "%i\n", curr->n);
+fprintf(stdout, "%d\n", curr->n);
 curr = curr->next;
 }
 }
