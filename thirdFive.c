@@ -9,10 +9,10 @@ void mydiv(stack_t **stack, __attribute__((unused)) unsigned int line)
 if (*stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
-fprintf(stderr, "L%d: can't sub, stack too short\n", line);
+fprintf(stderr, "L%d: can't div, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
-if ((*stack)->n == 0 || (*stack)->next->n == 0)
+if ((*stack)->n == 0)
 {
 fprintf(stderr, "L%d: division by zero", line);
 exit(EXIT_FAILURE);
