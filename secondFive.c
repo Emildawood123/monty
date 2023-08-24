@@ -54,7 +54,7 @@ fprintf(stderr, "L%d: can't add, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 (*stack)->n = (*stack)->n + (*stack)->next->n;
-(*stack)->next = (*stack)->next->next;
+(*stack)->next = new->next;
 free(new);
 }
 /**
