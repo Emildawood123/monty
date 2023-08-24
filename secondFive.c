@@ -82,6 +82,7 @@ free_stack(stack);
 fprintf(stderr, "L%d: can't sub, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
-(*stack)->n = (*stack)->n - (*stack)->next->n;
-(*stack)->next = (*stack)->next->next;
+(*stack)->next->n = (*stack)->n - (*stack)->next->n;
+(*stack)->next->prev = NULL;
+(*stack) = (*stack)->next;
 }
