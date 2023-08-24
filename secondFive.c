@@ -29,20 +29,15 @@ else
  */
 void swap(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
-stack_t *new;
+int n;
 if (*stack == NULL || (*stack)->next == NULL)
 {
 fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
-new = (*stack)->next;
-new->prev = NULL;
-new->n = (*stack)->next->n;
-(*stack)->next = new->next;
-new->next = (*stack);
-new->next = *stack;
-*stack = new;
-free(new);
+n = (*stack)->n;
+(*stack)->n = (*stack)->next->n;
+(*stack)->next->n = n;
 }
 /**
  * add - merge f and s in one
