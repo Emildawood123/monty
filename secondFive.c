@@ -56,8 +56,8 @@ exit(EXIT_FAILURE);
 new = *stack;
 (*stack)->next->n = (*stack)->n + (*stack)->next->n;
 (*stack)->next->prev = NULL;
-free(new);
 (*stack) = (*stack)->next;
+free(new);
 }
 /**
  * nop - nothing
@@ -86,6 +86,6 @@ exit(EXIT_FAILURE);
 new = *stack;
 (*stack)->next->n = (*stack)->next->n - (*stack)->n;
 (*stack)->next->prev = NULL;
-free(new);
 (*stack) = (*stack)->next;
+free(new);
 }
