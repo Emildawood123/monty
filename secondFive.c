@@ -42,6 +42,7 @@ new = (*stack)->next;
 new->prev = NULL;
 new->next = *stack;
 *stack = new;
+free_stack(&new);
 }
 /**
  * add - merge f and s in one
