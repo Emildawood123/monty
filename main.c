@@ -1,6 +1,7 @@
 #define _POSIX_C_SOURCE 200809L
 #define _GNU_SOURCE
 #include "monty.h"
+char *value;
 /**
  * main - that to receive command from us..
  * @argc: numbers of words
