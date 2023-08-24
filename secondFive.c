@@ -37,9 +37,10 @@ fprintf(stderr, "L%d: can't swap, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 new = (*stack)->next;
+new->prev = NULL;
+new->n = (*stack)->next->n;
 (*stack)->next = new->next;
 new->next = (*stack);
-new->prev = NULL;
 new->next = *stack;
 *stack = new;
 free(new);
