@@ -46,7 +46,14 @@ n = (*stack)->n;
  */
 void add(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
-stack_t *new = (*stack)->next;
+stack_t *new;
+new = malloc(sizeof(stack_t));
+if (new == NULL)
+{
+free(new);
+fprintf(stderr, "Error: malloc failed\n");
+exit(EXIT_FAILURE);
+}
 if (*stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
