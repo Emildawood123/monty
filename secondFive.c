@@ -46,6 +46,7 @@ n = (*stack)->n;
  */
 void add(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
+stack_t *new = (*stack)->next;
 if (*stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
@@ -54,6 +55,7 @@ exit(EXIT_FAILURE);
 }
 (*stack)->n = (*stack)->n + (*stack)->next->n;
 (*stack)->next = (*stack)->next->next;
+free(new);
 }
 /**
  * nop - nothing
