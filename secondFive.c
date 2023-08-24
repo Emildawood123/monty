@@ -50,15 +50,14 @@ stack_t *new;
 new = *stack;
 if (*stack == NULL || (*stack)->next == NULL)
 {
-free(new);
 free_stack(stack);
 fprintf(stderr, "L%d: can't add, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 (*stack)->next->n = (*stack)->n + (*stack)->next->n;
 (*stack)->next->prev = NULL;
-(*stack) = (*stack)->next;
 free(new);
+(*stack) = (*stack)->next;
 }
 /**
  * nop - nothing
