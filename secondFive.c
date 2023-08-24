@@ -47,13 +47,7 @@ n = (*stack)->n;
 void add(stack_t **stack, __attribute__((unused)) unsigned int line)
 {
 stack_t *new;
-new = malloc(sizeof(stack_t));
-if (new == NULL)
-{
-free(new);
-fprintf(stderr, "Error: malloc failed\n");
-exit(EXIT_FAILURE);
-}
+new = (*stack)->next;
 if (*stack == NULL || (*stack)->next == NULL)
 {
 free_stack(stack);
@@ -61,7 +55,7 @@ fprintf(stderr, "L%d: can't add, stack too short\n", line);
 exit(EXIT_FAILURE);
 }
 (*stack)->n = (*stack)->n + (*stack)->next->n;
-(*stack)->next = new->next;
+(*stack)->next = new->next->next;
 free(new);
 }
 /**
